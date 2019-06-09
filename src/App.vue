@@ -1,22 +1,21 @@
 <template lang="pug">
   .app-container
     Hero
-    nav
-      ul
-        li
-          router-link(to="#") All Employees
-        li
-          router-link(to="#") Add Employee
+    NavBar
+    .home-link
+      router-link(to="/") Home
     router-view
 </template>
 
 <script>
 import Hero from './components/Hero'
+import NavBar from './components/NavBar'
 
 export default {
   name: 'app',
   components: {
-    Hero
+    Hero,
+    NavBar
   }
 }
 </script>
@@ -34,26 +33,12 @@ body {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
 }
 
-nav {
-  display: flex;
-  justify-content: center;
-  background-color: #222;
-  padding: 20px 0;
-}
+.home-link {
+  margin: 5px 0 0 20px;
 
-ul {
-  width: 70%;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  display: flex;
-  justify-content: space-around;
-
-  li {
-
-    a {
-      color: $neon-green;
-    }
+  a {
+    color: #222;
+    text-decoration: none;
   }
 }
 </style>
