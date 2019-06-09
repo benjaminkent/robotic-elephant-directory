@@ -35,6 +35,19 @@ ul {
     text-align: center;
     cursor: pointer;
   }
+
+  li:hover {
+    animation: neon3 1.5s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes neon3 {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px $neon-green, 0 0 40px $neon-green, 0 0 50px $neon-green, 0 0 65px $neon-green, 0 0 80px $neon-green;
+  }
+  to {
+    text-shadow: 0 0 0px #fff, 0 0 5px #fff, 0 0 10px #fff, 0 0 15px $neon-green, 0 0 20px $neon-green, 0 0 25px $neon-green, 0 0 40px $neon-green, 0 0 60px $neon-green;
+  }
 }
 
 .router-link-exact-active {

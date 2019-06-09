@@ -38,7 +38,10 @@ body {
 
   a {
     color: #222;
-    text-decoration: none;
+  }
+
+  a:hover {
+    color: $neon-green;
   }
 }
 </style>

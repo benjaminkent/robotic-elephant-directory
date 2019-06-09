@@ -14,6 +14,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../design/variables.scss';
+
 .hero-container {
   height: 500px;
   display: grid;
@@ -37,17 +39,19 @@ export default {
     header {
       font-family: 'Righteous', cursive;
       color: #47ffb8;
-      text-shadow: 1px 1px 1px #0a0a0a;
 
       h1 {
         font-size: 42px;
         margin: 0;
+        letter-spacing: 2px;
+        text-shadow: 0 0 3px #0a0a0a;
       }
 
       p {
         margin: 0;
         text-align: center;
         font-size: 26px;
+        text-shadow: 0 0 2px #0a0a0a;
       }
     }
   }
