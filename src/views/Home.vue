@@ -1,6 +1,6 @@
 <template lang="pug">
   .home-container
-    img(src="../assets/logo.png")
+    h1 home container
 </template>
 
 <script>
