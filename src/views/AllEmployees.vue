@@ -5,6 +5,7 @@
         .header
           h3 {{ employee.firstName }} {{ employee.lastName }}
           i.fal.fa-times-circle(@click="deleteEmployee(employee)")
+        p {{ employee.jobDescription }}
 </template>
 
 <script>
