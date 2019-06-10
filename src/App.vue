@@ -34,7 +34,7 @@ body {
 }
 
 .home-link {
-  margin: 5px 0 0 20px;
+  margin: 5px 0 20px 20px;
 
   a {
     color: #222;

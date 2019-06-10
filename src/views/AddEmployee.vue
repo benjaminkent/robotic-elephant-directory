@@ -174,8 +174,8 @@ form {
       -moz-appearance: none;
       appearance: none;
       border-radius: 50%;
-      width: 16px;
-      height: 16px;
+      width: 14px;
+      height: 14px;
       border: 1px solid #222;
       transition: .2s all linear;
     }

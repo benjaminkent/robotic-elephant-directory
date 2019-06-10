@@ -2,10 +2,11 @@
   .all-container
     ul
       li(v-for="employee in employees")
-        .header
-          h3 {{ employee.firstName }} {{ employee.lastName }}
-          i.fal.fa-times-circle(@click="deleteEmployee(employee)")
-        p {{ employee.jobDescription }}
+        router-link.link(:to="`/employee/${employee.id}`")
+          .header
+            h3 {{ employee.firstName }} {{ employee.lastName }}
+            i.fal.fa-times-circle(@click="deleteEmployee(employee)")
+          p {{ employee.jobTitle }}
 </template>
 
 <script>
@@ -25,7 +26,6 @@ export default {
     deleteEmployee (employee) {
       this.axios.wrapper
         .delete(`/Employees/${employee.id}`)
-        .then(response => console.log(response))
       this.employees.splice(this.employees.indexOf(employee), 1)
     }
   }
@@ -33,6 +33,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.all-container {
+  color: #222;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -43,7 +47,7 @@ ul {
 
 li {
   width: 300px;
-  margin: 20px;
+  margin: 5px 20px;
 }
 
 .header {
@@ -62,6 +66,15 @@ li {
 
 .fa-times-circle:hover {
   color: #bc2f2f;
+}
+
+p {
+  margin: 0;
+}
+
+.link {
+  text-decoration: none;
+  color: #222;
 }
 </style>
 
