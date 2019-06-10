@@ -10,6 +10,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.home-container {
+  margin: 20px;
+}
+
 h1 {
   color: #222;
 }

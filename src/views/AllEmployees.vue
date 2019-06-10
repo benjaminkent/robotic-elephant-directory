@@ -1,12 +1,18 @@
 <template lang="pug">
   .all-container
-    ul
-      li(v-for="employee in employees")
-        router-link.link(:to="`/employee/${employee.id}`")
-          .header
-            h3 {{ employee.firstName }} {{ employee.lastName }}
-            i.fal.fa-times-circle(@click="deleteEmployee(employee)")
-          p {{ employee.jobTitle }}
+    table
+      thead
+        tr
+          th Employee Name
+          th Position
+      tbody
+        tr(v-for="employee in employees")
+          td {{ employee.firstName }} {{ employee.lastName }}
+          td {{ employee.jobTitle }}
+          td.options
+            router-link(to="/update-employee")
+              p.update UPDATE
+            p.delete(@click="deleteEmployee(employee)") DELETE
 </template>
 
 <script>
@@ -37,44 +43,46 @@ export default {
   color: #222;
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
+table {
+  padding: 20px;
+  width: 100%;
 }
 
-li {
-  width: 300px;
-  margin: 5px 20px;
+th {
+  text-align: left;
+  font-size: 18px;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
+td {
+  margin: 3px 0;
+}
 
-  h3 {
-    margin: 0;
+.options {
+  display: flex;
+  justify-content: flex-end;
+
+  a {
+    text-decoration: none;
+    color: #eac700;
+  }
+
+  a:hover {
+    color: #d3b300;
   }
 }
 
-.fa-times-circle {
+.delete {
+  margin-left: 15px;
   color: #ff3f3f;
   cursor: pointer;
 }
 
-.fa-times-circle:hover {
+.delete:hover {
   color: #bc2f2f;
 }
 
 p {
   margin: 0;
-}
-
-.link {
-  text-decoration: none;
-  color: #222;
 }
 </style>
 

@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import AddEmployee from './views/AddEmployee.vue'
 import AllEmployees from './views/AllEmployees.vue'
 import Employee from './views/Employee.vue'
+import UpdateEmployee from './views/UpdateEmployee.vue'
 
 Vue.use(Router)
 
@@ -25,6 +26,11 @@ export default new Router({
       path: '/all-employees',
       name: 'allEmployees',
       component: AllEmployees
+    },
+    {
+      path: '/update-employee',
+      name: 'UpdateEmployee',
+      component: UpdateEmployee
     },
     {
       path: '/employee/:employeeId',
