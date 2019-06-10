@@ -7,7 +7,8 @@
           th Position
       tbody
         tr(v-for="employee in employees")
-          td {{ employee.firstName }} {{ employee.lastName }}
+          td.name
+            router-link(:to="`/employee/${employee.id}`") {{ employee.firstName }} {{ employee.lastName }}
           td {{ employee.jobTitle }}
           td.options
             router-link(to="/update-employee")
@@ -46,6 +47,7 @@ export default {
 table {
   padding: 20px;
   width: 100%;
+  margin-bottom: 300px;
 }
 
 th {
@@ -55,6 +57,13 @@ th {
 
 td {
   margin: 3px 0;
+}
+
+.name {
+
+  a {
+    color: #222;
+  }
 }
 
 .options {

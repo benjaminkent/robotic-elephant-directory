@@ -7,16 +7,16 @@
       form(@submit.prevent="addEmployee")
         .form-group
           label(for="firstName") First Name
-          input.input(id="firstName" type="text" placeholder="Bob" v-model="firstName")
+          input.input(id="firstName" type="text" v-model="firstName")
         .form-group
           label(for="lastName") Last Name
-          input.input(id="lastName" type="text" placeholder="Smith" v-model="lastName")
+          input.input(id="lastName" type="text" v-model="lastName")
         .form-group
           label(for="jobTitle") Job Title
-          input.input(id="jobTitle" type="text" placeholder="Software Engineer" v-model="jobTitle")
+          input.input(id="jobTitle" type="text" v-model="jobTitle")
         .form-group
           label(for="jobDescription") Job Description
-          textarea.input(id="jobDescription" type="text" placeholder="Build amazingly awesome software and websites" v-model="jobDescription")
+          textarea.input(id="jobDescription" type="text" v-model="jobDescription")
         .form-group
           label(for="hireDate") Hire Date
           input.input(id="hireDate" type="date" v-model="hireDate")
@@ -58,8 +58,8 @@
           label(for="emergencyContactPerson") Emergency Contact
           input.input(id="emergencyContactPerson" type="text" v-model="emergencyContactPerson")
         .form-group
-          label(for="emergencyContactPersonPhone") Emergency Contact #
-          input.input(id="emergencyContactPersonPhone" type="text" v-model="emergencyContactPersonPhone")
+          label(for="emergencyContactPhone") Emergency Contact #
+          input.input(id="emergencyContactPhone" type="text" v-model="emergencyContactPhone")
         button(type="submit") Create Employee
 </template>
 
@@ -82,7 +82,7 @@ export default {
       salary: '',
       email: '',
       emergencyContactPerson: '',
-      emergencyContactPersonPhone: '',
+      emergencyContactPhone: '',
       ptoHours: '',
       isFullTime: null,
       createdOk: false
@@ -97,7 +97,7 @@ export default {
           jobTitle: this.jobTitle,
           jobDescription: this.jobDescription,
           birthday: this.birthday,
-          hireDated: this.hireDate,
+          hiredDate: this.hireDate,
           phoneNumber: this.phoneNumber,
           address: this.address,
           city: this.city,
@@ -106,7 +106,7 @@ export default {
           salary: this.salary,
           email: this.email,
           emergencyContactPerson: this.emergencyContactPerson,
-          emergencyContactPersonPhone: this.emergencyContactPersonPhone,
+          emergencyContactPhone: this.emergencyContactPhone,
           ptoHours: this.ptoHours,
           isFullTime: this.isFullTime,
         })
@@ -119,6 +119,21 @@ export default {
         })
       this.firstName = ''
       this.lastName = ''
+      this.jobTitle = ''
+      this.jobDescription = ''
+      this.birthday = ''
+      this.hireDate = ''
+      this.phoneNumber = ''
+      this.address = ''
+      this.city = ''
+      this.zip = ''
+      this.state = ''
+      this.salary = ''
+      this.email = ''
+      this.emergencyContactPerson = ''
+      this.emergencyContactPersonPhone = ''
+      this.ptoHours = ''
+      this.isFullTime = null
     }
   }
 }
@@ -139,6 +154,7 @@ export default {
   width: 70%;
   display: flex;
   justify-content: center;
+  margin-bottom: 200px;
 }
 
 .notifier {
@@ -191,6 +207,11 @@ form {
   border: 1px solid #d8d8d8;
   border-radius: 5px;
   text-indent: 5px;
+}
+
+textarea {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-size: 12px;
 }
 
 button {
